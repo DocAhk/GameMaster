@@ -14,9 +14,9 @@ public class Dice
         this.sides = sides;
     }
 
-    public int getSides()
+    public void setSides(int sides)
     {
-        return sides;
+        this.sides = sides;
     }
 
     public Dice()
@@ -28,5 +28,10 @@ public class Dice
     public int roll()
     {
         return rng.nextInt(sides) + 1;
+    }
+
+    public int roll(int tempSides)
+    {
+        return rng.nextInt(tempSides) + 1;
     }
 }
