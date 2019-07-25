@@ -1,40 +1,33 @@
 package character;
 
-public class Stat
-{
+public class Stat {
     private String name;
 
     private int trueLevel;
 
     private int effectiveLevel;
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public int getTrueLevel()
-    {
+    public int getTrueLevel() {
         return trueLevel;
     }
 
-    public void setTrueLevel(int trueLevel)
-    {
+    public void setTrueLevel(int trueLevel) {
         this.trueLevel = trueLevel;
     }
 
-    public int getEffectiveLevel()
-    {
+    public int getEffectiveLevel() {
         return effectiveLevel;
     }
 
-    public void setEffectiveLevel(int effectiveLevel)
-    {
+    public void setEffectiveLevel(int effectiveLevel) {
         this.effectiveLevel = effectiveLevel;
     }
 }

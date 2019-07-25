@@ -1,6 +1,5 @@
 package item;
 
-public interface Item
-{
+public interface Item {
 
 }

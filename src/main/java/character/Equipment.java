@@ -1,5 +1,4 @@
 package character;
 
-public interface Equipment
-{
+public interface Equipment {
 }
