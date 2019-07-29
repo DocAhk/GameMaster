@@ -4,4 +4,4 @@ target/
 
 *.iml
 
-*.png
+src/main/resources/assets/portraits/*.png
