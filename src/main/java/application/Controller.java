@@ -1,10 +1,11 @@
 package application;
 
 import logic.Dice;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.*;
+import org.apache.commons.io.IOUtils;
+import java.io.IOException;
+import java.io.InputStream;
 
 @CrossOrigin(origins = "${cross.origin}")
 @RestController
@@ -18,4 +19,11 @@ public class Controller {
         return die.roll();
     }
 
+    @GetMapping(value = "/image", produces = MediaType.IMAGE_JPEG_VALUE)
+    public @ResponseBody
+    byte[] getImage(@RequestParam(value="portraitFileName") String portraitFileName) throws IOException {
+        InputStream in = getClass()
+                .getResourceAsStream("/assets/portraits/" + portraitFileName);
+        return IOUtils.toByteArray(in);
+    }
 }
