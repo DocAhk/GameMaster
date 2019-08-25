@@ -1,6 +1,8 @@
 package application;
 
 import logic.Dice;
+import character.Character;
+
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.apache.commons.io.IOUtils;
@@ -20,10 +22,16 @@ public class Controller {
     }
 
     @GetMapping(value = "/image", produces = MediaType.IMAGE_JPEG_VALUE)
-    public @ResponseBody
-    byte[] getImage(@RequestParam(value="portraitFileName") String portraitFileName) throws IOException {
+    public @ResponseBody byte[] getImage(@RequestParam(value="portraitFileName") String portraitFileName) throws IOException {
         InputStream in = getClass()
                 .getResourceAsStream("/assets/portraits/" + portraitFileName);
         return IOUtils.toByteArray(in);
+    }
+
+    @GetMapping(path="/Jim")
+    public Character getJim() {
+        Character jim = new Character("Jim");
+        jim.setPortrait("male_aumaua_b_lg.png");
+        return jim;
     }
 }
