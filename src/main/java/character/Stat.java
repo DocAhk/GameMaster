@@ -7,6 +7,11 @@ public class Stat {
 
     private int effectiveLevel;
 
+    public Stat(String name, int level) {
+        this.name = name;
+        this.trueLevel = level;
+    }
+
     public String getName() {
         return name;
     }
