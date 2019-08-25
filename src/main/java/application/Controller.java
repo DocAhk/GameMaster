@@ -7,7 +7,7 @@ import org.apache.commons.io.IOUtils;
 import java.io.IOException;
 import java.io.InputStream;
 
-@CrossOrigin(origins = "${cross.origin}")
+@CrossOrigin
 @RestController
 public class Controller {
 
