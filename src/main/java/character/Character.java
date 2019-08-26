@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class Character {
     private String name;
 
+    private int level;
+
     private String bio;
 
     private String portrait;
@@ -14,11 +16,17 @@ public class Character {
     private ArrayList<Skill> skills;
 
     public Character() {
-        name = "";
+        this.name = "";
+        this.level = 0;
+        this.stats = new ArrayList<Stat>();
+        this.skills = new ArrayList<Skill>();
     }
 
     public Character(String name) {
         this.name = name;
+        this.level = 0;
+        this.stats = new ArrayList<Stat>();
+        this.skills = new ArrayList<Skill>();
     }
 
     public String getName() {
@@ -27,6 +35,14 @@ public class Character {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     public String getBio() {

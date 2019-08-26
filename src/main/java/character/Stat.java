@@ -12,6 +12,7 @@ public class Stat {
     public Stat(String name, int level) {
         this.name = name;
         this.trueLevel = level;
+        this.effectiveLevel = level;
     }
 
     public String getName() {

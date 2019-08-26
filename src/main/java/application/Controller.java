@@ -1,5 +1,6 @@
 package application;
 
+import character.Stat;
 import logic.Dice;
 import character.Character;
 
@@ -32,6 +33,13 @@ public class Controller {
     public Character getJim() {
         Character jim = new Character("Jim");
         jim.setPortrait("male_aumaua_b_lg.png");
+        jim.getStats().add(new Stat("Agility", 5));
+        jim.getStats().add(new Stat("Charisma", 10));
+        jim.getStats().add(new Stat("Constitution", 15));
+        jim.getStats().add(new Stat("Intelligence", 10));
+        jim.getStats().add(new Stat("Mana", 0));
+        jim.getStats().add(new Stat("Perception", 10));
+        jim.getStats().add(new Stat("Strength", 20));
         return jim;
     }
 }
