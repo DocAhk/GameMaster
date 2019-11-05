@@ -31,7 +31,8 @@ public class Controller {
 
     @GetMapping(path="/Jim")
     public Character getJim() {
-        Character jim = new Character("Jim");
+        Character jim = new Character();
+        jim.setFirstName("Jim");
         jim.setPortrait("male_aumaua_b_lg.png");
         jim.getStats().add(new Stat("Agility", 5));
         jim.getStats().add(new Stat("Charisma", 10));

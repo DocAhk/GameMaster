@@ -1,12 +1,16 @@
 package character;
 
-import character.perks.Perk;
+import character.perk.Perk;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Scanner;
+
 
 public class Character {
-    private String name;
+    private String firstName;
+
+    private String lastName;
 
     private int level;
 
@@ -23,25 +27,26 @@ public class Character {
     private List<Ability> abilities;
 
     public Character() {
-        this.name = "";
+        this.firstName = "";
         this.level = 0;
         this.stats = new ArrayList<>();
         this.skills = new ArrayList<>();
     }
 
-    public Character(String name) {
-        this.name = name;
-        this.level = 0;
-        this.stats = new ArrayList<>();
-        this.skills = new ArrayList<>();
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getName() {
-        return name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public int getLevel() {
@@ -75,15 +80,6 @@ public class Character {
     public void setStats(List<Stat> stats) {
         this.stats = stats;
     }
-
-    public List<Skill> getSkills() {
-        return skills;
-    }
-
-    public void setSkills(List<Skill> skills) {
-        this.skills = skills;
-    }
-
     public Stat getStat(String name) {
         for(Stat s: stats) {
             if(s.getName().equals(name)) {
@@ -91,6 +87,14 @@ public class Character {
             }
         }
         return null;
+    }
+
+    public List<Skill> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(List<Skill> skills) {
+        this.skills = skills;
     }
 
     public Skill getSkill(String name) {
@@ -125,5 +129,9 @@ public class Character {
 
     public void setAbilities(List<Ability> abilities) {
         this.abilities = abilities;
+    }
+
+    public void addAbility(Ability a) {
+        abilities.add(a);
     }
 }
